@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Tailor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header">
+        <img src="/images/capture-removebg-preview.png" alt="" class="logo-img">
+        <div class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#abtsection">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="photo">
+        <img src="/images/suit.jpg" alt="" class="photo-img">
+        <div class="content">
+            <div class="contenth1">
+                <h1>Welcome to Cloud Tailor</h1>
+            </div>
+            <div class="contentp">
+                <p class="paragraph">Get You Perfectly Stiched Clothes Of Your Choice At Best Price.!</p>
+            </div>
+            <div class="contentbtn">
+                <button><a href="#Appointment">Book An Appointment</a></button>
+            </div> 
+        </div>
+    </div>
+
+    <div class="appointment" id="Appointment">
+        <form action="submit2.php" method="post">
+            <h3 class="apph3">Book An Appointment</h3>
+
+            <input type="text" placeholder="Enter Your Name" id="name" name="name">
+            <input type="email" placeholder="Enter Your Email" id="email" name="email">
+            <input type="number" placeholder="Enter Your Phone Number" id="number" name="number">
+            <input type="address" placeholder="Enter Your Address" id="address" name="address">
+            <input type="date" placeholder="Date" id="date" name="date">
+            <input type="text" placeholder="Color" id="color" name="color">
+            <input type="time" placeholder="Time" id="time" name="time">
+
+            <input type="submit" value="Submit" class="submit">
+        </form>
+    </div>
+
+    <div class="info">
+
+        <div class="tailor1 tailor">
+            <img src="/images/tailor1.jpg" alt="" class="infoimg">
+            <div class="tailorinfo">
+                <h3>Nick Alex</h3> 
+                <p>New York</p>
+            </div>
+        </div>
+
+        <div class="tailor2 tailor">
+            <img src="/images/tailor2.jpg" alt="" class="infoimg">
+            <div class="tailorinfo">
+                <h3>Tony Stark</h3> 
+                <p>HongKong</p>
+            </div>
+        </div>
+
+        <div class="tailor3 tailor">
+            <img src="/images/tailor3.jpg" alt="" class="infoimg">
+            <div class="tailorinfo">
+                <h3>James Will</h3> 
+                <p>Indonesia</p>
+            </div>
+        </div>
+
+        <div class="tailor4 tailor">
+            <img src="/images/tailor4.jpg" alt="" class="infoimg">
+            <div class="tailorinfo">
+                <h3>John Mathew</h3> 
+                <p>Sweden</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="brdr"></div>
+    <h2 class="abouth1">About Us</h2>
+    <div class="about" id="abtsection">
+        <div class="dabba1 dabba">
+            <img src="/images/capture-removebg-preview.png" alt="" class="aboutimg">
+            <p class="aboutp">Online Stiching Platform</p>
+            <p class="aboutpara">Anyone can book and appointment for stiching the clothes by sitting at your home.</p>
+            <p class="aboutpara2">Easy, Pocket Friendly, Time saving</p>
+        </div>
+
+        <div class="dabba2 dabba">
+            <h2 class="dabbah2">Steps To Get Your Clothes.</h2>
+            <p class="dabbap">1.Book an appointment.</p>
+            <p class="dabbap">2.The agent will come at your given address at selected time.</p>
+            <p class="dabbap">3.Give your measurements to the agent.</p>
+            <p class="dabbap">4.Select the cloth in the catalog given by the agent.</p>
+            <p class="dabbap">5.Agent will give you the temporary bill and you will get online invoice.</p>
+            <p class="dabbap">6.Within 72 hrs you will get your stiched clothes and pay the bill once you get the order.</p>
+        </div>
+    </div>
+    <div class="brdr2"></div>
+    
+    <div class="contact" id="contact">
+        <h1>Contact</h1>
+        <div class="contactbox">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </div>
+    </div>
+    <div class="feedback">
+        <button class="feedback-btn"><a href="bogafeedback.html">FeedBack</a></button>
+    </div>
+    
+    <p>@copyright,RTP Codes, All Rights Reserved.</p>
+
+    
+</body>
+</html>
