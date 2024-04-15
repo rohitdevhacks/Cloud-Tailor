@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333; /* Dark gray background color */
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #content {
+            margin-bottom: 20px;
+        }
+
+        #buttons {
+            margin-bottom: 20px;
+        }
+
+        #mic-icon {
+            width: 30px;
+            height: 36px;
+            margin-right: 11px;
+            margin-bottom: -12px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #fff; /* White text color */
+            text-decoration: none;
+        }
+
+        #back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="content">
+            <textarea id="speechInput" placeholder="Speak your feedback..." rows="5" cols="50"></textarea>
+        </div>
+        <div id="buttons">
+            <!-- <img id="mic-icon" src="micimg.svg"> -->
+            <button id="startButton">Start Recording</button>
+            <button type="submit" id="submitButton">Submit Feedback</button>
+        </div>
+        <a id="back-link" href="index.php">Back</a> <!-- Back link -->
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
+    <script>
+        const speechConfig = SpeechSDK.SpeechConfig.fromSubscription("9e713dc2a3cc470daff2d4f0fd44c9e7", "eastus");
+        const recognizer = new SpeechSDK.SpeechRecognizer(speechConfig);
+
+        document.getElementById("startButton").addEventListener("click", () => {
+            recognizer.startContinuousRecognitionAsync();
+        });
+
+        document.getElementById("submitButton").addEventListener("click", () => {
+            // Get the feedback message from the textarea
+            // const feedbackMessage = document.getElementById("speechInput").value;
+            
+            // Create an object with the feedback data
+            // const feedbackData = { message: feedbackMessage };
+            
+            // Call the function to upload feedback data to Azure Blob Storage
+            //  uploadFeedbackData(feedbackData);
+
+            // Alert the user that their feedback has been sent
+            alert("Your precious feedback has been sent!");
+        });
+
+        recognizer.recognizing = (s, e) => {
+            document.getElementById("speechInput").value = e.result.text;
+        };
+
+        recognizer.recognized = (s, e) => {
+            if (e.result.reason === SpeechSDK.ResultReason.RecognizedSpeech) {
+                document.getElementById("speechInput").value = e.result.text;
+            }
+        };
+
+        recognizer.canceled = (s, e) => {
+            if (e.reason === SpeechSDK.CancellationReason.Error) {
+                console.error(`Cancellation error: ${e.errorDetails}`);
+            }
+        };
+            
+    </script>
+</body>
+</html>
